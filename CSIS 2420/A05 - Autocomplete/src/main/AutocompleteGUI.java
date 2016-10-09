@@ -3,11 +3,11 @@ package main;
 /******************************************************************************
  * Compilation: javac AutocompleteGUI.java Execution: java AutocompleteGUI
  * input.txt k Dependencies: Autocomplete.java Term.java
- * 
+ *
  * @author Matthew Drabick
  * @author Ming-Yee Tsang
  * @author Andrew Ward
- * 
+ *
  *         Interactive GUI used to demonstrate the Autocomplete data type.
  *
  *         * Reads a list of terms and weights from a file, specified as a
@@ -24,7 +24,7 @@ package main;
  *         BUG: Search bar and suggestion drop-down don't resize properly with
  *         window; they stay the same size when the window gets wider, and the
  *         weights get hidden when the window gets smaller.
- * 
+ *
  *         FEATURE: make weights be in left column instead of right column ? (to
  *         match toString() and output format of test client on assignment)
  *
@@ -152,29 +152,29 @@ public class AutocompleteGUI extends JFrame
 			.addComponent(ap).addComponent(searchButton)));
     }
 
-  
+
     private class AutocompletePanel extends JPanel
     {
 	// for serializable classes
 	private static final long serialVersionUID = 1L;
 
 	private final JTextField searchText; // the search bar
-	private Autocomplete auto; // the Autocomplete object 
+	private Autocomplete auto; // the Autocomplete object
 	private String[] results = new String[k]; // an array of matches
 	//// private JList<String> suggestions;   // a list of autocomplete matches (Java 7)
 	private JList suggestions; // a list of autocomplete matches (Java 6)
-	private JScrollPane scrollPane; // the scroll bar on the side of the 
+	private JScrollPane scrollPane; // the scroll bar on the side of the
 	private JPanel suggestionsPanel; // the dropdown menu of suggestions
-	private int extraMargin = 5; // extra room to leave at the bottom of 
+	private int extraMargin = 5; // extra room to leave at the bottom of
 				     // the suggestion drop-down below the
 				     // last suggestion
 
 	// Note: can't use JList<String> in Java 6
 
-	// TODO: change how this is implemented so it is dynamic; 
+	// TODO: change how this is implemented so it is dynamic;
 	// shouldn't have to define a column number.
 
-	// Keep these next two values in sync! - used to keep the search box 
+	// Keep these next two values in sync! - used to keep the search box
 	// the same width as the drop-down
 	// DEF_COLUMNS should be the number of characters in suggListLen
 
@@ -184,7 +184,7 @@ public class AutocompleteGUI extends JFrame
 	// an example of one of the longest strings in the database
 	private final String suggListLen = "<b>Harry Potter and the Deathly Hallows: Part 1 (2010)</b>";
 
-	
+
 	public AutocompletePanel(String filename)
 	{
 	    super();
@@ -570,7 +570,7 @@ public class AutocompleteGUI extends JFrame
 			for (int i = 0; i < results.length; i++)
 			{
 
-			    // A bit of a hack to get the Term's query string 
+			    // A bit of a hack to get the Term's query string
 			    // and weight from toString()
 			    String next = allResults[i].toString();
 			    if (allResults[i] == null)
@@ -590,7 +590,7 @@ public class AutocompleteGUI extends JFrame
 			    if (query.length() > suggListLen.length())
 				query = query.substring(0, suggListLen.length());
 
-			    // create the table HTML 
+			    // create the table HTML
 			    results[i] = "<html><table width=\"" + searchText.getPreferredSize().width + "\">"
 				    + "<tr><td align=left>" + query.substring(0, textLen + 1) + "<b>"
 				    + query.substring(textLen + 1) + "</b>";
@@ -644,7 +644,7 @@ public class AutocompleteGUI extends JFrame
      * Creates a URI from the user-defined string and searches the web with the
      * selected search engine Opens the default web browser (or a new tab if it
      * is already open)
-     * 
+     *
      * @param s
      *            string to search online for
      */
@@ -677,7 +677,7 @@ public class AutocompleteGUI extends JFrame
 	    }
 	}
 
-   
+
     public static void main(String[] args)
 	{
 	    final String filename = args[0];

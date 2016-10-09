@@ -1,6 +1,6 @@
 /**
  * Name: Mick Zeller
- * Date: February 11, 2015
+ * Big thanks to Jake @thomann061 for help with this assignment
  */
 package main;
 
