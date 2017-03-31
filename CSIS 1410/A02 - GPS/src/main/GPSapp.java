@@ -11,7 +11,7 @@ public class GPSapp
     public static void main(String[] args)
 
 	{
-
+		//creation of GPSCoordinets
 	    GpsCoordients thisSpot = new GpsCoordients(40.760671, -111.891122);
 	    GPS spot = new GPS("SLC", thisSpot);
 
